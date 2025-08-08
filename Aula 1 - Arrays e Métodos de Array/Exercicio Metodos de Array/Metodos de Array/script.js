@@ -1,46 +1,50 @@
 function executarPush() {
-  const array = ['🍎', '🍌'];
-  const resultado = array;
+  const frutas = ['🍎', '🍌'];
+  frutas.push('🍇')
+  const resultado = frutas;
   document.getElementById('resultado-push').textContent = resultado;
 }
 
 function executarPop() {
   const array = ['🍎', '🍌', '🍇'];
+  array.pop()
   const resultado = array;
   document.getElementById('resultado-pop').textContent = resultado;
 }
 
 function executarShift() {
   const array = ['🍎', '🍌', '🍇'];
+  array.shift()
   const resultado = array;
   document.getElementById('resultado-shift').textContent = resultado;
 }
 
 function executarUnshift() {
   const array = ['🍌', '🍇'];
-  const resultado = 'Resultado da operação unshift';
+  array.unshift('🍓')
+  const resultado = array;
   document.getElementById('resultado-unshift').textContent = resultado;
 }
 
 function executarIncludes() {
   const array =  ['🍎', '🍌', '🍇'];
-  const resultado = array;
+  const resultado = array.includes('🥝')
   document.getElementById('resultado-includes').textContent = resultado;
 }
 
 function executarReverse() {
   const array = ['🍎', '🍌', '🍇'];
-  const resultado = array;
+  const resultado = array.reverse();
   document.getElementById('resultado-reverse').textContent = resultado;
 }
 
 function executarSort() {
-  const array = [3, 1, 4, 2];
+  const array = [3, 1, 4, 2, 11];
   const array2 = ["Brasil", "Argentina", "Noruega", "Italia"];
 
-  const resultado = array;
+  const resultado = array.sort((a,b) => b - a);
   document.getElementById('resultado-sort').textContent = resultado;
-  const resultado2 = array2;
+  const resultado2 = array2.sort();
   document.getElementById('resultado-sort2').textContent = resultado2;
 }
 
@@ -73,43 +77,52 @@ function executarJoin() {
 
 function executarForEach() {
   const array = ['🍎', '🍌', '🍇'];
-  const resultado = 'Resultado da operação forEach';
+  const resultado = array.forEach( function (pegaItem){
+    console.log(pegaItem);
+  });
   document.getElementById('resultado-foreach').textContent = resultado;
 }
 
 function executarMap() {
   const array = ['🍎', '🍌', '🍇'];
-  const resultado = 'Resultado da operação map';
+  const resultado = array.map(function(pegaItem, index){
+    return `O item ${index} é ✅ ${pegaItem} ✅`
+  });
   document.getElementById('resultado-map').textContent = resultado;
 }
 
  function executarMapHTML() {
     const dispositivos = ['🎮', '🕹️', '💻'];
-    const resultado = 'Resultado da operação map inserindo HTML';
+    const resultado = dispositivos.map(pegaItem => `
+      <h1>Produto em promoção!</h1>
+      <p> ${pegaItem}</p>
+      `);
     document.getElementById('resultado-map-html').innerHTML = resultado.join('<br>');
   }
 
 function executarFilter() {
   const array = ['🍎', '🍌', '🍇'];
-  const resultado = 'Resultado da operação filter';
+  const resultado = array.filter(pegaItem => pegaItem === '🍎');
   document.getElementById('resultado-filter').textContent = resultado;
 }
 
 function executarFind() {
   const array =  ['🍎', '🍌', '🍇'];
-  const resultado = 'Resultado da operação find';
+  const resultado = array.find(pegaItem => pegaItem === "🍇");
   document.getElementById('resultado-find').textContent = resultado;
 }
 
 function executarFindIndex() {
   const array =  ['🍎', '🍌', '🍇'];
-  const resultado = 'Resultado da operação findIndex';
+  const resultado = array.findIndex(pegaItem => pegaItem === '🍇');
   document.getElementById('resultado-findIndex').textContent = resultado;
 }
 
 function executarReduce() {
   const array = [1, 2, 3, 4];
-  const resultado = 'Resultado da operação reduce';
+  const resultado = array.reduce((totalAcumulado, valorAtual) => {
+    return totalAcumulado + valorAtual
+  }, 0);
   document.getElementById('resultado-reduce').textContent = resultado;
 }
 
