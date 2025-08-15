@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f8fa;
+    background-color:rgb(255, 179, 202);
     margin: 0;
     padding: 0;
     display: flex;
@@ -14,7 +14,7 @@ body {
 }
 
 header {
-    background-color: #1da1f2;
+    background-color:rgb(65, 22, 35);
     color: #fff;
     padding: 10px 0;
     text-align: center;
@@ -52,7 +52,7 @@ textarea {
   }
 
 button {
-    background-color: #1da1f2;
+    background-color: rgb(65, 22, 35);
     color: #fff;
     border: none;
     border-radius: 5px;
